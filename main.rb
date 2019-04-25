@@ -24,5 +24,16 @@ def read_pitchers
   puts @pitchers
 end
 
+def make_url(pitcher)
+  "https://baseball.fantasysports.yahoo.com/b1/40156/playersearch?&search="+pitcher.split(" ")[0]+"%20"+pitcher.split(" ")[1]
+end
+
+def yahoo
+  @pitchers.each do |pitcher|
+    Launchy.open(make_url(pitcher))
+  end
+end
+
 get_probable_pitchers_URL
 read_pitchers
+yahoo
