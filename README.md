@@ -4,7 +4,9 @@ Probable Pitchers is a stupid ruby app I made to automatically launch my league'
 
 ## Requirements
 
-You need Ruby for this. If you have a mac, you should have it already? Not really sure
+You need Ruby for this. If you have a mac, you should have it already? Not really sure.
+
+The application uses Nokogiri and Launchy, two really common Ruby gems. Nothing fancy and no logins needed, yet.
 
 If you're on Windows, go here: https://rubyinstaller.org/ and follow the steps to install it.
 
