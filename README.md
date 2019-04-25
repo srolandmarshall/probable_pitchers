@@ -4,8 +4,12 @@ Probable Pitchers is a stupid ruby app I made to automatically launch my league'
 
 ## Installation
 
+download it
+unzip it
+open your terminal (space+command and type `terminal` if you don't know what this means)
+type `cd` then drag the folder to your terminal window 
 `bundle install`, i think?
-you probably need ruby.
+you probably need ruby. you're on your own from here.
 
 ## Usage
 
