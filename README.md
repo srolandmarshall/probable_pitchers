@@ -15,7 +15,7 @@ Probable Pitchers is a stupid ruby app I made to automatically launch my league'
 
 really has no use for any other human besides those in my league, right now.
 
-# Commands:
+### Commands:
 * `today`: for today's pitchers
 * `player`: gets tomorrows names, lets you launch their page
 * `tomorrow`: for more options on tomorrow's pitchers, such as:
