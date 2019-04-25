@@ -15,7 +15,7 @@ If you're on Windows, go here: https://rubyinstaller.org/ and follow the steps t
 1. open your command line (space+command and type `terminal` for Mac or https://www.howtogeek.com/235101/10-ways-to-open-the-command-prompt-in-windows-10/ for Windows)
 1. type `cd` then drag the unzipped folder to your terminal window
 1. type `bundle install` into command line if you get an error here. maybe try `gem install bundler` first.
-1. if the above worked, type `ruby pp.rb` and i think it should do everything.
+1. if the above worked, type `ruby pp.rb` and I think it should do everything I told it to do.
 
 ## Usage
 if you get it running, there's a menu. here are your options
