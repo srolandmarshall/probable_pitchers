@@ -98,6 +98,7 @@ def runtime
     tomorrow: for options on tomorrow's pitchers
     tomorrows names: just their names
     player: gets tomorrows names, lets you launch their page
+    league: changes the league ID if you want to use this for another league
     exit: exits
     "
     command = gets

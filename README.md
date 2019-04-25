@@ -28,9 +28,7 @@ follow other prompts as necessary.
 
 ## Contributing
 
-I want to make this able to take in a league URL and then work for any league. If you find this and I haven't done it yet, I'll give you $20 to do it.
-
-I also want to make this work with Yahoo's fantasy sports API. Combining the above with that should make us able to find probable pitchers into the future that are also Free Agents.
+I want to make this work with Yahoo's fantasy sports API. That should make us able to find probable pitchers into the future that are also Free Agents. Needs OAuth support and probably rails.
 
 ## License
 [MIT](https://choosealicense.com/licenses/mit/)
