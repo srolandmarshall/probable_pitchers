@@ -7,6 +7,7 @@ Bundler.require
 @today_URL = ""
 @tomorrow_URL = ""
 @pitchers = []
+@league = "40156"
 
 
 def get_probable_pitchers_URL (today = Date.today, tomorrow = Date.today+1)
@@ -24,8 +25,14 @@ def read_pitchers
   end
 end
 
+def change_league
+  puts "get the number after /b1/ in your yahoo URL"
+  league = gets
+  @league = league.chomp
+end
+
 def make_url(pitcher)
-  "https://baseball.fantasysports.yahoo.com/b1/40156/playersearch?&search="+pitcher.split(" ")[0]+"%20"+pitcher.split(" ")[1]
+  "https://baseball.fantasysports.yahoo.com/b1/"+@league+"/playersearch?&search="+pitcher.split(" ")[0]+"%20"+pitcher.split(" ")[1]
 end
 
 def tomorrows_pitchers
@@ -58,7 +65,7 @@ def tomorrow_runtime
 end
 
 def pitcher_num_valid(num)
-  num <= @pitchers.length if (num =~ /^[0-9]*$/) || (num == -1)
+  num.to_i <= @pitchers.length if (num =~ /^[0-9]*$/) || (num == "-1")
 end
 
 def by_player
@@ -67,13 +74,13 @@ def by_player
     tomorrows_names
     puts "which number? type -1 to exit"
     num_str = gets
-    num = num_str.chomp.to_i
+    num = num_str.chomp
     if pitcher_num_valid(num)
       case num
-      when -1
+      when "-1"
         b = false
       else
-        player = @pitchers[num-1]
+        player = @pitchers[num.to_i-1]
         Launchy.open(make_url(player))
       end
     else
@@ -95,6 +102,8 @@ def runtime
     "
     command = gets
     case command.chomp
+    when "league"
+      change_league
     when "today"
       todays_pitchers_launch
     when "tomorrow"
