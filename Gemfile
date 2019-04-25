@@ -1,6 +1,6 @@
 source :rubygems
 
-require 'launchy'
-require 'nokogiri'
-require 'open-uri'
-require 'pry'
+gem 'launchy'
+gem 'nokogiri'
+gem 'open-uri'
+gem 'pry'
