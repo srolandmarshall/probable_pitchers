@@ -1,0 +1,3 @@
+# As per http://stackoverflow.com/a/7662245/82216
+install: --no-rdoc --no-ri
+update:  --no-rdoc --no-to

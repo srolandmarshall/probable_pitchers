@@ -3,6 +3,8 @@ require "rubygems"
 require "bundler/setup"
 require 'date'
 
+api_path = "https://fantasysports.yahooapis.com/fantasy/v2/"
+
 @today_URL = ""
 @tomorrow_URL = ""
 @pitchers = []
@@ -56,14 +58,31 @@ def tomorrow_runtime
   end
 end
 
-def by_player
-  tomorrows_names
-  puts "which number?"
-  num_str = gets
-  num = num_str.chomp.to_i
-  player = @pitchers[num-1]
-  Launchy.open(make_url(player))
+def pitcher_num_valid(num)
+  num <= @pitchers.length
 end
+
+def by_player
+  b = true
+  while b do
+    tomorrows_names
+    puts "which number? type -1 to exit"
+    num_str = gets
+    num = num_str.chomp.to_i
+    if pitcher_num_valid(num)
+      case num
+      when -1
+        b = false
+      else
+        player = @pitchers[num-1]
+        Launchy.open(make_url(player))
+      end
+    else
+      puts "try again"
+    end
+  end
+end
+
 
 def runtime
   b = true
@@ -101,6 +120,16 @@ def app
   get_probable_pitchers_URL
   read_pitchers
   runtime
+end
+
+def api_call
+  b = true
+  while b do
+    #https://fantasysports.yahooapis.com/fantasy/v2/{resource}/{resource_key}
+    url = puts
+    url = url.chomp
+    response = HTTParty.get(url)
+  end
 end
 
 app
