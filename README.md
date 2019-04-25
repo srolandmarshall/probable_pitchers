@@ -7,8 +7,8 @@ Probable Pitchers is a stupid ruby app I made to automatically launch my league'
 1. download it
 1. unzip it
 1. open your terminal (space+command and type `terminal` if you don't know what this means)
-1. type `cd` then drag the folder to your terminal window 
-1. `bundle install`, i think? you probably need ruby. you're on your own if you get an error here. maybe try `gem install bundler` first, if it didn't work. 
+1. type `cd` then drag the folder to your terminal window
+1. `bundle install`, i think? you probably need ruby. you're on your own if you get an error here. maybe try `gem install bundler` first, if it didn't work.
 1. if the above worked, type `ruby main.rb` and i think it should do everything.
 
 ## Usage
@@ -22,6 +22,7 @@ really has no use for any other human besides those in my league, right now.
     * `tomorrows links`: will launch all the probable pitchers profiles at once in your browser (don't do this unless you can handled like 20 tabs opening at once)
     * `tomorrows names`: just their names
 * `exit`: exits
+* `league`: changes the league ID if you want to use this for another league
 
 follow other prompts as necessary.
 
