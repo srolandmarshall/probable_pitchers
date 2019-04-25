@@ -4,7 +4,7 @@ Probable Pitchers is a stupid ruby app I made to automatically launch my league'
 
 ## Installation
 
-bundle install, i think?
+`bundle install`, i think?
 you probably need ruby.
 
 ## Usage
