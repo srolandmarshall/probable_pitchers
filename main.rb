@@ -1,7 +1,8 @@
 # Load the bundled environment
-require "rubygems"
 require "bundler/setup"
 require 'date'
+require 'open-uri'
+Bundler.require
 
 @today_URL = ""
 @tomorrow_URL = ""
@@ -56,13 +57,29 @@ def tomorrow_runtime
   end
 end
 
+def pitcher_num_valid(num)
+  num <= @pitchers.length if (num =~ /^[0-9]*$/) || (num == -1)
+end
+
 def by_player
-  tomorrows_names
-  puts "which number?"
-  num_str = gets
-  num = num_str.chomp.to_i
-  player = @pitchers[num-1]
-  Launchy.open(make_url(player))
+  b = true
+  while b do
+    tomorrows_names
+    puts "which number? type -1 to exit"
+    num_str = gets
+    num = num_str.chomp.to_i
+    if pitcher_num_valid(num)
+      case num
+      when -1
+        b = false
+      else
+        player = @pitchers[num-1]
+        Launchy.open(make_url(player))
+      end
+    else
+      puts "try again"
+    end
+  end
 end
 
 def runtime
